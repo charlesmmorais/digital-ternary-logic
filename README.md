@@ -11,6 +11,8 @@
 
 O projeto usa **HTML + CSS + JavaScript puro**, sem framework e sem etapa de build. Pode ser publicado diretamente no GitHub Pages.
 
+**Live Demo:** https://charlesmmorais.github.io/digital-ternary-logic/
+ 
 ## Recursos implementados
 
 - Simulador visual em canvas.

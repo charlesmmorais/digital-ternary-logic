@@ -210,6 +210,13 @@ O núcleo do simulador está separado da interface:
 - `src/ui/app.js`: editor visual em canvas, paleta, inspetor e ações de usuário.
 - `src/ui/styles.css`: aparência da aplicação.
 
+## Manual
+
+A documentação dos componentes, sinais, portas primitivas, barramentos, somadores, registradores e memórias está disponível em:
+
+[Manual do Digital Ternary Logic](MANUAL.md)
+
+
 ## Licença
 
 MIT.

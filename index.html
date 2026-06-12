@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Ternary Logic</title>
+  <link rel="stylesheet" href="./src/ui/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Digital Ternary Logic</h1>
+      <p>Simulador visual de lógica ternária balanceada: N = -1, 0 = neutro, P = +1.</p>
+    </div>
+    <div class="top-actions">
+      <button id="btnTick" title="Avança registradores e memória">Tick</button>
+      <button id="btnSave">Salvar local</button>
+      <button id="btnLoad">Carregar local</button>
+      <button id="btnExport">Exportar JSON</button>
+      <label class="file-button">Importar JSON <input id="fileImport" type="file" accept="application/json,.json" /></label>
+      <button id="btnClear" class="danger">Limpar</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section>
+        <h2>Paleta</h2>
+        <div id="palette" class="palette"></div>
+      </section>
+      <section>
+        <h2>Exemplos</h2>
+        <div class="stack">
+          <button data-example="primitives">Portas primitivas</button>
+          <button data-example="adder">Somador ternário</button>
+          <button data-example="memory">Registrador + RAM9</button>
+        </div>
+      </section>
+      <section>
+        <h2>Chips compostos</h2>
+        <p class="hint">Use INPUT/OUTPUT como portas expostas e salve o circuito atual como chip.</p>
+        <button id="btnCreateChip">Criar chip composto</button>
+        <div id="customChips" class="custom-list"></div>
+      </section>
+      <section>
+        <h2>Legenda</h2>
+        <div class="legend"><span class="dot n"></span>N = -1</div>
+        <div class="legend"><span class="dot z"></span>0 = neutro</div>
+        <div class="legend"><span class="dot p"></span>P = +1</div>
+        <div class="legend"><span class="dot x"></span>X = indefinido/conflito</div>
+      </section>
+    </aside>
+
+    <section class="workspace">
+      <div class="canvas-toolbar">
+        <span id="projectName">Novo projeto</span>
+        <span id="status">Pronto</span>
+      </div>
+      <canvas id="circuitCanvas" width="1600" height="1000"></canvas>
+    </section>
+
+    <aside class="inspector">
+      <h2>Inspetor</h2>
+      <div id="inspectorContent" class="inspector-content">Selecione um componente.</div>
+      <hr />
+      <h2>Como usar</h2>
+      <ol>
+        <li>Adicione componentes pela paleta.</li>
+        <li>Arraste os blocos no canvas.</li>
+        <li>Clique em uma saída e depois em uma entrada para ligar fios.</li>
+        <li>Clique em INPUT para alternar N/0/P.</li>
+        <li>Use Tick para atualizar registradores e RAM.</li>
+        <li>Duplo clique em nó/fio para excluir.</li>
+      </ol>
+    </aside>
+  </main>
+
+  <textarea id="exportBox" class="export-box" readonly></textarea>
+  <script type="module" src="./src/ui/app.js"></script>
+</body>
+</html>

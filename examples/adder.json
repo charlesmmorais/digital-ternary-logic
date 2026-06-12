@@ -1,0 +1,98 @@
+{
+  "version": "1.0.0",
+  "name": "Exemplo: Somador ternário balanceado",
+  "nodes": [
+    {
+      "id": "node_80i70rr",
+      "type": "INPUT",
+      "x": 60,
+      "y": 120,
+      "label": "A",
+      "state": {
+        "value": "P"
+      }
+    },
+    {
+      "id": "node_nifnsuz",
+      "type": "INPUT",
+      "x": 60,
+      "y": 230,
+      "label": "B",
+      "state": {
+        "value": "P"
+      }
+    },
+    {
+      "id": "node_w1ly5sm",
+      "type": "INPUT",
+      "x": 60,
+      "y": 340,
+      "label": "Cin",
+      "state": {
+        "value": "0"
+      }
+    },
+    {
+      "id": "node_opa62mw",
+      "type": "TADD",
+      "x": 310,
+      "y": 205,
+      "label": "TADD",
+      "state": {}
+    },
+    {
+      "id": "node_vvz2d24",
+      "type": "OUTPUT",
+      "x": 560,
+      "y": 170,
+      "label": "SUM",
+      "state": {}
+    },
+    {
+      "id": "node_m7p6wn9",
+      "type": "OUTPUT",
+      "x": 560,
+      "y": 270,
+      "label": "COUT",
+      "state": {}
+    }
+  ],
+  "wires": [
+    {
+      "id": "wire_84r5drn",
+      "fromNode": "node_80i70rr",
+      "fromPort": "out",
+      "toNode": "node_opa62mw",
+      "toPort": "a"
+    },
+    {
+      "id": "wire_h0nt47y",
+      "fromNode": "node_nifnsuz",
+      "fromPort": "out",
+      "toNode": "node_opa62mw",
+      "toPort": "b"
+    },
+    {
+      "id": "wire_y2d25d6",
+      "fromNode": "node_w1ly5sm",
+      "fromPort": "out",
+      "toNode": "node_opa62mw",
+      "toPort": "cin"
+    },
+    {
+      "id": "wire_u1w1awr",
+      "fromNode": "node_opa62mw",
+      "fromPort": "sum",
+      "toNode": "node_vvz2d24",
+      "toPort": "in"
+    },
+    {
+      "id": "wire_pvldv1a",
+      "fromNode": "node_opa62mw",
+      "fromPort": "cout",
+      "toNode": "node_m7p6wn9",
+      "toPort": "in"
+    }
+  ],
+  "customChips": {}
+}

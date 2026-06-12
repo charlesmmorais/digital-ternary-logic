@@ -1,0 +1,133 @@
+{
+  "version": "1.0.0",
+  "name": "Exemplo: TINV, TMIN e TMAX",
+  "nodes": [
+    {
+      "id": "node_ya1iixn",
+      "type": "INPUT",
+      "x": 60,
+      "y": 120,
+      "label": "A",
+      "state": {
+        "value": "N"
+      }
+    },
+    {
+      "id": "node_a3wafrt",
+      "type": "INPUT",
+      "x": 60,
+      "y": 260,
+      "label": "B",
+      "state": {
+        "value": "P"
+      }
+    },
+    {
+      "id": "node_eobatnh",
+      "type": "TINV",
+      "x": 260,
+      "y": 90,
+      "label": "TINV(A)",
+      "state": {}
+    },
+    {
+      "id": "node_koxmfsb",
+      "type": "TMIN",
+      "x": 260,
+      "y": 220,
+      "label": "TMIN(A,B)",
+      "state": {}
+    },
+    {
+      "id": "node_ssooe9e",
+      "type": "TMAX",
+      "x": 260,
+      "y": 360,
+      "label": "TMAX(A,B)",
+      "state": {}
+    },
+    {
+      "id": "node_30s6vb0",
+      "type": "OUTPUT",
+      "x": 500,
+      "y": 90,
+      "label": "out_inv",
+      "state": {}
+    },
+    {
+      "id": "node_r7o9mwr",
+      "type": "OUTPUT",
+      "x": 500,
+      "y": 220,
+      "label": "out_min",
+      "state": {}
+    },
+    {
+      "id": "node_nk8nzk5",
+      "type": "OUTPUT",
+      "x": 500,
+      "y": 360,
+      "label": "out_max",
+      "state": {}
+    }
+  ],
+  "wires": [
+    {
+      "id": "wire_x5uisik",
+      "fromNode": "node_ya1iixn",
+      "fromPort": "out",
+      "toNode": "node_eobatnh",
+      "toPort": "in"
+    },
+    {
+      "id": "wire_tps6204",
+      "fromNode": "node_eobatnh",
+      "fromPort": "out",
+      "toNode": "node_30s6vb0",
+      "toPort": "in"
+    },
+    {
+      "id": "wire_h6xgrbt",
+      "fromNode": "node_ya1iixn",
+      "fromPort": "out",
+      "toNode": "node_koxmfsb",
+      "toPort": "a"
+    },
+    {
+      "id": "wire_13ax6qx",
+      "fromNode": "node_a3wafrt",
+      "fromPort": "out",
+      "toNode": "node_koxmfsb",
+      "toPort": "b"
+    },
+    {
+      "id": "wire_eip5gpt",
+      "fromNode": "node_koxmfsb",
+      "fromPort": "out",
+      "toNode": "node_r7o9mwr",
+      "toPort": "in"
+    },
+    {
+      "id": "wire_r1yn6za",
+      "fromNode": "node_ya1iixn",
+      "fromPort": "out",
+      "toNode": "node_ssooe9e",
+      "toPort": "a"
+    },
+    {
+      "id": "wire_l77915e",
+      "fromNode": "node_a3wafrt",
+      "fromPort": "out",
+      "toNode": "node_ssooe9e",
+      "toPort": "b"
+    },
+    {
+      "id": "wire_5mqig06",
+      "fromNode": "node_ssooe9e",
+      "fromPort": "out",
+      "toNode": "node_nk8nzk5",
+      "toPort": "in"
+    }
+  ],
+  "customChips": {}
+}

@@ -1,0 +1,168 @@
+{
+  "version": "1.0.0",
+  "name": "Exemplo: Registrador e RAM9",
+  "nodes": [
+    {
+      "id": "node_6mmauk5",
+      "type": "INPUT",
+      "x": 60,
+      "y": 80,
+      "label": "Data",
+      "state": {
+        "value": "P"
+      }
+    },
+    {
+      "id": "node_f7fx0a4",
+      "type": "INPUT",
+      "x": 60,
+      "y": 180,
+      "label": "Load/WE",
+      "state": {
+        "value": "P"
+      }
+    },
+    {
+      "id": "node_tu54tmf",
+      "type": "INPUT",
+      "x": 60,
+      "y": 280,
+      "label": "Reset",
+      "state": {
+        "value": "N"
+      }
+    },
+    {
+      "id": "node_nc634en",
+      "type": "REGISTER",
+      "x": 300,
+      "y": 130,
+      "label": "Reg1",
+      "state": {
+        "q": "0"
+      }
+    },
+    {
+      "id": "node_dxog4sp",
+      "type": "OUTPUT",
+      "x": 540,
+      "y": 150,
+      "label": "Q",
+      "state": {}
+    },
+    {
+      "id": "node_5yeoshf",
+      "type": "INPUT",
+      "x": 60,
+      "y": 450,
+      "label": "A1",
+      "state": {
+        "value": "0"
+      }
+    },
+    {
+      "id": "node_784kbvu",
+      "type": "INPUT",
+      "x": 60,
+      "y": 550,
+      "label": "A0",
+      "state": {
+        "value": "P"
+      }
+    },
+    {
+      "id": "node_xs7ocso",
+      "type": "RAM9",
+      "x": 300,
+      "y": 430,
+      "label": "RAM9",
+      "state": {
+        "mem": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "id": "node_chf593c",
+      "type": "OUTPUT",
+      "x": 560,
+      "y": 500,
+      "label": "RAM out",
+      "state": {}
+    }
+  ],
+  "wires": [
+    {
+      "id": "wire_zxlrytq",
+      "fromNode": "node_6mmauk5",
+      "fromPort": "out",
+      "toNode": "node_nc634en",
+      "toPort": "d"
+    },
+    {
+      "id": "wire_l39vhq6",
+      "fromNode": "node_f7fx0a4",
+      "fromPort": "out",
+      "toNode": "node_nc634en",
+      "toPort": "load"
+    },
+    {
+      "id": "wire_7w7ji1v",
+      "fromNode": "node_tu54tmf",
+      "fromPort": "out",
+      "toNode": "node_nc634en",
+      "toPort": "reset"
+    },
+    {
+      "id": "wire_b9daxs8",
+      "fromNode": "node_nc634en",
+      "fromPort": "q",
+      "toNode": "node_dxog4sp",
+      "toPort": "in"
+    },
+    {
+      "id": "wire_3ouvho6",
+      "fromNode": "node_5yeoshf",
+      "fromPort": "out",
+      "toNode": "node_xs7ocso",
+      "toPort": "a1"
+    },
+    {
+      "id": "wire_ujy3xtr",
+      "fromNode": "node_784kbvu",
+      "fromPort": "out",
+      "toNode": "node_xs7ocso",
+      "toPort": "a0"
+    },
+    {
+      "id": "wire_60ia23c",
+      "fromNode": "node_nc634en",
+      "fromPort": "q",
+      "toNode": "node_xs7ocso",
+      "toPort": "data"
+    },
+    {
+      "id": "wire_jbp80rq",
+      "fromNode": "node_f7fx0a4",
+      "fromPort": "out",
+      "toNode": "node_xs7ocso",
+      "toPort": "we"
+    },
+    {
+      "id": "wire_2nm3hzw",
+      "fromNode": "node_xs7ocso",
+      "fromPort": "out",
+      "toNode": "node_chf593c",
+      "toPort": "in"
+    }
+  ],
+  "customChips": {}
+}

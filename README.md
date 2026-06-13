@@ -38,7 +38,7 @@ O projeto usa **HTML + CSS + JavaScript puro**, sem framework e sem etapa de bui
 
 ## Como executar
 
-### Opção 1 — abrir localmente
+### Opção 1 - abrir localmente
 
 Basta abrir `index.html` em um navegador moderno. Para evitar restrições de módulo ES em alguns navegadores, prefira iniciar um servidor local:
 
@@ -59,7 +59,7 @@ No Windows, se `python` não estiver no PATH:
 py -m http.server 8000
 ```
 
-### Opção 2 — GitHub Pages
+### Opção 2 - GitHub Pages
 
 1. Envie este repositório ao GitHub.
 2. Acesse **Settings → Pages**.
